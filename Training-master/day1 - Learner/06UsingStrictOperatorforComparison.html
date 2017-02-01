@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Please enter 2 numbers below</p>
+<form>
+<input type="number" id="input1"/>
+<input type="number" id="input2"/>
+</form>
+<div><button id="button1">Compare !</button></div>
+<div id="demo"></div>
+
+
+<script>
+
+// Event Listener    
+    
+var event1 = document.getElementById("button1");
+event1.addEventListener("click", myFirstButton, false);   
+    
+    //Starting the function declared on the event listener
+    
+    function myFirstButton() {
+    
+    // Here I am getting the value from the user input1
+    
+    var input1 = parseInt(document.getElementById("input1").value);
+    
+    // Here I am getting the value from the user input2
+    
+    var input2 = parseInt(document.getElementById("input2").value);
+    
+     // Here I am displaying in text whether the numbers inputted are the same or different
+        
+        if (input1 == input2) {
+            
+            document.getElementById("demo").innerHTML = "The numbers are the same!";
+            
+        } else if (input1 != input2) {
+            
+            document.getElementById("demo").innerHTML = "The numbers are different!";
+        }    
+    
+    }
+        
+</script>
+
+</body>
+</html>
