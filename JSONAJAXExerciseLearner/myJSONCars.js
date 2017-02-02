@@ -19,7 +19,7 @@ function loadData() {
 var myRequest = new XMLHttpRequest;
 
 // The open method receives 3 parameters 
-myRequest.open("GET", "https://raw.githubusercontent.com/biatoSalo/Training/master/JSONAJAXExerciseLearner/expensiveLuxuryCars.json", true);
+myRequest.open("GET", "https://raw.githubusercontent.com/jesterJohnf/Training/master/JSONAJAXExerciseLearner/expensiveLuxuryCars.json", true);
 
 // We need a condition to check if the data has arrived
     
@@ -48,9 +48,20 @@ myRequest.onload = function () {
             clearAll();
             
             document.getElementById("messageAlert").innerHTML = "Please choose a car manufacturer to load data";
+            
         } else {
             
             document.getElementById("manufacturerC").innerHTML = myData.data[manufacturerStored].manufacturer;
+            
+            document.getElementById("modelC").innerHTML = myData.data[manufacturerStored].model;
+            
+            document.getElementById("priceC").innerHTML = "£ " + myData.data[manufacturerStored].price;
+            
+            document.getElementById("descriptionC").innerHTML = myData.data[manufacturerStored].description;
+            
+            document.getElementById("videoC").innerHTML = '<iframe width="auto" height="auto" src="'+myData.data[manufacturerStored].video+'" framework="0" allowFullScreen></iframe>';
+            
+            
         }
         
     }
