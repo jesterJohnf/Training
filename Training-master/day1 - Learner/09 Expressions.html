@@ -12,39 +12,7 @@
 <div id="demo"></div>
 
 <script>
-
-// Event Listener    
-    
-var event1 = document.getElementById("button1");
-event1.addEventListener("click", myFirstButton, false);   
-    
-    //Starting the function declared on the event listener
-    
-    function myFirstButton() {
-    
-    // Here I am getting the value from the user input1
-    
-    var input1 = parseInt(document.getElementById("input1").value);
-        
-     // Here I am displaying in text whether the number inputted is -ive, <10, or > 10
-        
-        if (input1 < 0) {
-            
-            document.getElementById("demo").innerHTML = "This Number Is Negative";
-            
-        } else if (input1 < 10) {
-            
-            document.getElementById("demo").innerHTML = "This Number Is Less Than 10";
-        }    
-        
-        else if (input1 > 10) {
-            
-            document.getElementById("demo").innerHTML = "This Number Is Greater Than 10";
-        }    
-    
-    }
-    
-    
+     
 </script>
 
 </body>
