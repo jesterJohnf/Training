@@ -254,20 +254,80 @@ console.log(ages);*/
 console.log(student.address.doorN);*/
 
 
+// JavaScript Object Oriented Programming
+
+/*function Fruit (name, color, shape) {
+    
+    this.name = name;
+    this.color = color;
+    this.shape = shape;
+    
+    this.describe = function () {
+        
+        return "A " + this.name + " is the color " + this.color + " and the shape is " + this.shape;
+    };
+}
+
+// Instance of the Class Fruit
+
+var apple = new Fruit("Apple", "Red", "Round");
+var melon = new Fruit("Melon", "Green", "Round");
+
+console.log(melon.describe());*/
 
 
+var Person = function(firstName, lastName) {
+    
+    this.firstName = firstName;
+    this.lastName = lastName;
+    
+/*    this.getName = function(){
+        
+        return this.firstName + " " + this.lastName;
+    };*/
+}
 
+Person.prototype.getName = function() {
+        
+        return this.firstName + " " + this.lastName;
+    };
 
+var thierry = new Person("Thierry", "Henry");
+var dennis = new Person("Dennis", "Bergkamp");
 
-            
+//console.log(thierry.getName());
+
+//console.log(Person.prototype);            
             
     
 
+// Let's have a look at inheritance with OOP
 
+var Employee = function(firstName, lastName, employeeId) {
+     
+    //this.firstName = firstName; // <--- This is not OOP
+    //this.lastName = lastName;
+    
+    Person.call(this, firstName, lastName);
+    
+    this.employeeId = employeeId;
+    
+}
 
+// By assigning a Employee prototype to the Person prototype we are overriding the EMPLOYEE CONSTRUCTOR with the PERSON CONSTRUCTOR 
 
+Employee.prototype = Object.create(Person.prototype);
 
+// What's the constructor all about then?
 
+Employee.prototype.constructor = Employee;
+
+var robert = new Employee("Robert", "Pires", 7);
+var fredrik = new Employee("Fredrik", "Ljungberg", 8);
+var patrick = new Employee("Patrick", "Vieira", 4);
+var gilberto = new Employee("Gilberto", "Silva", 19);
+
+console.log(gilberto.getName());
 
 
 
