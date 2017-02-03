@@ -12,7 +12,29 @@
 <div id="demo"></div>
 
 <script>
+     //Event Listener
+var event1 = document.getElementById("button1");
+    event1.addEventListener("click", myFirstB, false);
+    
+    //Starting the function declared on the event listener
+    function myFirstB() {
+        
+        //Here I am getting the value from the user input
+        var input1 = document.getElementById("input1").value;
+        
+        if (input1 < 0) {
+            
+            document.getElementById("demo").innerHTML = "negative";
+        } else if (input1 < 10) {
+            document.getElementById("demo").innerHTML = "less than 10";
+            
+        } else if (input1 > 10) {
+            
+            document.getElementById("demo").innerHTML = "more than 10";
+        }
+        
      
+    }
 </script>
 
 </body>

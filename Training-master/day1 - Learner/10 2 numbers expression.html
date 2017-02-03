@@ -13,6 +13,29 @@
 
 <script>
       
+    
+     //Event Listener
+var event1 = document.getElementById("button1");
+    event1.addEventListener("click", myFirstB, false);
+    
+    //Starting the function declared on the event listener
+    function myFirstB() {
+        
+        //Here I am getting the value from the user input
+        var input1 = parseInt(document.getElementById("input1").value);
+        var input2 = parseInt(document.getElementById("input2").value);
+        
+        if (input1 > 10 && input2 > 10) {
+            
+            document.getElementById("demo").innerHTML = "two are";
+            
+        } else if (input1 > 10 || input2 > 10) {
+        
+            //Here I am displaying the value back to the user
+            document.getElementById("demo").innerHTML = "one is";
+        }
+    }
+    
 </script>
 
 </body>
